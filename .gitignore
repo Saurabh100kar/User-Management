@@ -1,0 +1,4 @@
+node_modules/
+docker_test_db/
+*/.env
+.env

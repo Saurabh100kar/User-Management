@@ -1,0 +1,276 @@
+.tableContainer {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px var(--shadow);
+  overflow: hidden;
+  animation: fadeIn 0.6s ease-in 0.3s both;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.thead tr {
+  height: 3.5rem;
+}
+
+.thead th {
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  white-space: nowrap;
+  border: none;
+}
+
+.sortableHeader {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.sortableHeader:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.sortableHeader.activeSort {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.sortIcon {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  font-weight: bold;
+  min-width: 1rem;
+  display: inline-block;
+}
+
+.sortableHeader:hover .sortIcon {
+  opacity: 1;
+}
+
+.sortableHeader.activeSort .sortIcon {
+  opacity: 1;
+  color: #fef08a;
+}
+
+.columnIcon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.tbody {
+  background: var(--card-bg);
+}
+
+.tableRow {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+  animation: slideIn 0.4s ease-out both;
+}
+
+.tableRow:hover {
+  background: var(--bg-hover);
+  transform: translateX(4px);
+  box-shadow: -4px 0 12px var(--shadow);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableRow:nth-child(even) {
+  background: var(--bg-hover);
+}
+
+.tableRow:nth-child(even):hover {
+  background: var(--bg-hover);
+  opacity: 0.9;
+}
+
+.tableRow td {
+  padding: 1.125rem 1.25rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  border: none;
+  vertical-align: middle;
+}
+
+.idColumn,
+.idCell {
+  width: 5%;
+  font-weight: 600;
+  color: #64748b;
+  text-align: center;
+}
+
+.emailColumn,
+.emailCell {
+  width: 30%;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.genderColumn,
+.genderCell {
+  width: 12%;
+  text-align: center;
+}
+
+.genderIcon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.phoneColumn,
+.phoneCell {
+  width: 15%;
+}
+
+.actionsColumn,
+.actionsCell {
+  width: 10%;
+  text-align: center;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.editButton,
+.deleteButton {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.editButton:hover {
+  background: #dbeafe;
+  transform: scale(1.1);
+}
+
+.deleteButton:hover {
+  background: #fee2e2;
+  transform: scale(1.1);
+}
+
+.highlight {
+  background: #fef08a;
+  color: #854d0e;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px var(--shadow);
+  animation: fadeIn 0.6s ease-in;
+  border: 1px solid var(--border-color);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.emptyText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+}
+
+.emptySubtext {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tableRow td {
+    padding: 0.875rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .thead th {
+    padding: 0.875rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
