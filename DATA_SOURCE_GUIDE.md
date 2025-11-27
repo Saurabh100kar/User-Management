@@ -207,3 +207,5 @@ docker exec database psql -U postgres -d management_db -c 'SELECT COUNT(*) as to
 
 **Your data is stored in PostgreSQL, accessed via Prisma, served by Express, and displayed in React!** 🎉
 
+
+

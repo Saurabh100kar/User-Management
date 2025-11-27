@@ -130,3 +130,5 @@ pgAdmin4 Object Explorer:
 
 **Your database `management_db` with table `user` (50 users) is there - just navigate deeper into the tree!** 🎯
 
+
+
