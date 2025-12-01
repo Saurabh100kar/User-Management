@@ -209,3 +209,4 @@ docker exec database psql -U postgres -d management_db -c 'SELECT COUNT(*) as to
 
 
 
+
